@@ -19,6 +19,21 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: "Darker Grotesque",
+            variants: [`300`, `400`, `700`],
+          },
+          {
+            family: "Roboto",
+            variants: [`300`, `400`, `700`],
+          },
+        ],
+      },
+    },
     `gatsby-plugin-playground`,
   ],
 }

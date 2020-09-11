@@ -1,8 +1,7 @@
 import React from "react"
-
 import Image from "gatsby-image"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { INLINES } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 
 export default function Release({
   title,
@@ -17,10 +16,18 @@ export default function Release({
         const { value } = node.content[0]
         const { uri } = node.data
         return (
-          <a href={uri} rel="noreferrer" target="_blank">
+          <a
+            className="release__link"
+            href={uri}
+            rel="noreferrer"
+            target="_blank"
+          >
             {value}
           </a>
         )
+      },
+      [BLOCKS.PARAGRAPH]: (node, children) => {
+        return <p className="release__paragraph">{children}</p>
       },
     },
   }
@@ -54,12 +61,12 @@ export default function Release({
     } ${rawDate.getDate()} ${rawDate.getFullYear()}`
   }
   return (
-    <article>
-      <h2>{title}</h2>
-      <h3>{subtitle}</h3>
-      <Image fixed={releaseArt.fixed} />
+    <article className="release">
+      <h2 className="release__heading release__title">{title}</h2>
+      <h3 className="release__heading release__subtitle">{subtitle}</h3>
+      <Image className="release__cover" fixed={releaseArt.fixed} />
       {documentToReactComponents(releaseContent.json, options)}
-      <p>{formatReleaseDate(releaseDate)}</p>
+      <p className="release__date">{formatReleaseDate(releaseDate)}</p>
     </article>
   )
 }

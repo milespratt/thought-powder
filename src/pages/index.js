@@ -1,17 +1,18 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Release from "../components/Release"
+import "../css/main.css"
 
 const getReleases = graphql`
   query {
-    releases: allContentfulRelease {
+    releases: allContentfulRelease(sort: { fields: releaseDate }) {
       edges {
         node {
           contentful_id
           title
           subtitle
           releaseArt {
-            fixed(width: 300, height: 300) {
+            fixed(height: 300, width: 300, quality: 100) {
               ...GatsbyContentfulFixed_tracedSVG
             }
           }
@@ -28,7 +29,7 @@ const getReleases = graphql`
 export default function Home() {
   const { releases } = useStaticQuery(getReleases)
   return (
-    <div>
+    <div className="release__list">
       {releases.edges.map(node => {
         const {
           contentful_id,
