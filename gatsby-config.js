@@ -28,7 +28,15 @@ module.exports = {
             variants: [`300`, `400`, `700`],
           },
           {
-            family: "Roboto",
+            family: "Noto Serif",
+            variants: [`400`, `700`],
+          },
+          {
+            family: "Montserrat",
+            variants: [`300`, `400`, `700`],
+          },
+          {
+            family: "Merriweather",
             variants: [`300`, `400`, `700`],
           },
         ],

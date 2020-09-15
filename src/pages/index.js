@@ -5,7 +5,9 @@ import "../css/main.css"
 
 const getReleases = graphql`
   query {
-    releases: allContentfulRelease(sort: { fields: releaseDate }) {
+    releases: allContentfulRelease(
+      sort: { fields: releaseDate, order: [DESC] }
+    ) {
       edges {
         node {
           contentful_id
