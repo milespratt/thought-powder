@@ -34,6 +34,16 @@ p,
   line-height: 3rem;
 }
 
+.release__paragraph:first-of-type:first-letter {
+  color: var(--black);
+  float: left;
+  font-family: "Merriweather";
+  font-size: 7rem;
+  padding-top: 0.1rem;
+  padding-right: 0.8rem;
+  -webkit-margin-before: 1.1rem;
+}
+
 .release__heading {
   font-family: "Darker Grotesque";
   /* margin: 0; */
@@ -87,6 +97,11 @@ p,
   }
   .release__date {
     font-size: 1rem;
+  }
+  .release__paragraph:first-of-type:first-letter {
+    font-size: 6rem;
+    padding-top: 0.8rem;
+    -webkit-margin-before: 0.8rem;
   }
 }
 
