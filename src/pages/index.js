@@ -5,7 +5,7 @@ import "../css/main.css"
 
 const getReleases = graphql`
   query {
-    releases: allContentfulRelease(
+    releases: allContentfulThoughtPowderRelease(
       sort: { fields: releaseDate, order: [DESC] }
     ) {
       edges {
