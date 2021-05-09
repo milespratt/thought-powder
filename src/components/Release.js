@@ -64,7 +64,7 @@ export default function Release({
     <article className="release">
       <h2 className="release__heading release__title">{title}</h2>
       <h3 className="release__heading release__subtitle">{subtitle}</h3>
-      <Image className="release__cover" fixed={releaseArt.fixed} />
+      <Image className="release__cover" fluid={releaseArt.fluid} />
       {documentToReactComponents(releaseContent.json, options)}
       <p className="release__date">{formatReleaseDate(releaseDate)}</p>
     </article>

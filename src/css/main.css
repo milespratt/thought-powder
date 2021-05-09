@@ -59,6 +59,8 @@ p,
 }
 .release__cover {
   /* display: none !important; */
+  height: 300px;
+  width: 300px;
   margin-top: 2rem;
 }
 .release__link {
@@ -92,6 +94,10 @@ p,
     font-size: 2.5rem;
   }
   p,
+  .release__cover {
+    height: auto;
+    width: auto;
+  }
   .release__paragraph {
     font-size: 1.4rem;
   }

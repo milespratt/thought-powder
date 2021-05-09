@@ -17,6 +17,9 @@ const getReleases = graphql`
             fixed(height: 300, width: 300, quality: 100) {
               ...GatsbyContentfulFixed_tracedSVG
             }
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
           }
           releaseContent {
             json
