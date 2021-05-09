@@ -58,7 +58,7 @@ p,
   font-weight: 700;
 }
 .release__cover {
-  display: none !important;
+  /* display: none !important; */
   margin-top: 2rem;
 }
 .release__link {
